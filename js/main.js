@@ -20,17 +20,21 @@ elTime.innerHTML = `Зараз: ${moment().format('MMMM Do YYYY, h:mm:ss a')}`;
 elName.innerHTML = 'Вітаю! Як до Вас звертатися?'; 
 elNameDiv.classList.add('show');
 
+//зробити першу літеру заглавною
+const upFirst = (str) => {
+    str = str.toLowerCase();  // зробити всі літери маленькими
+    str = `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+    return str;   
+};
+
 elBtnOk.addEventListener('click', () => {
     let nameUs = elNameInput.value;
-    nameUs = nameUs.toLowerCase();
+        if (nameUs != '') nameUs = upFirst(nameUs)
+        else return;
     elName.innerHTML = `Вітаю, ${nameUs}!`; 
     elNameDiv.classList.remove('show');
     elSexDiv.classList.add('show');
 });
-
-const nameUP = (nameUs) => {
-    //nameUs.charAt(0) = !!!!!!!!!!!!!!!!!!
-};
 
 elSelectSex.addEventListener('change', (ev) => {
     let sex = ev.target.value;
@@ -72,7 +76,6 @@ elInputDate.addEventListener('change', (ev) => {
 });
 
 const year_check = (year) => {
-    
     if (year < '1900') {
         elComment.innerHTML = 'Твій вік занадто стародавній. Ти часом не динозавр? Вкажи реальний рік!';
         return;
