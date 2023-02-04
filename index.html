@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>    
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <title>Умовні оператори та функції</title>
+</head>
+<body>
+<div class="wrap">
+    
+    <div class="time"></div>
+    <p class="nameUser"></p>
+    <style>
+        .name:not(.show) {
+            display: none;
+        }
+    </style>
+    <div class="name">
+        <input type="text" placeholder="Ваше ім'я..." maxlength="20" name="input_name"><button type="button" name="nameOk">OK</button>
+    </div>    
+    <style>
+        .sex:not(.show) {
+            display: none;
+        }
+    </style>
+    <div class="sex">
+        <select name="sex_select">
+            <option value="sexxx">Оберіть стать:</option>
+            <option value="female">Жіноча</option>
+            <option value="male">Чоловіча</option>
+        </select>
+    </div>
+    <div class="answer"></div>
+    <style>
+        .age_block:not(.show) {
+            display: none;
+        }
+    </style>
+    <div class="age_block">
+        <input id="year" class="year" name="year" type="text" placeholder="Введіть рік" maxlength="4"> 
+        <button type="button" name="btn_close" class="btn_close">X</button>
+        <div>
+        <form>
+                <label for="bth_date">Або оберіть дату народження:</label>
+                <input type="date" class="bday" id="bday" name="bth_date" min="1900-01-01" max="2020-01-01">
+        
+        </form>
+        </div>
+        <div class="comment"></div>
+    </div>
+    
+</div>   
+
+<script src="./js/main.js"></script>
+</body>
+</html>
