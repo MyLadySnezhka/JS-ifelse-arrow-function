@@ -36,6 +36,10 @@ elBtnOk.addEventListener('click', () => {
     elSexDiv.classList.add('show');
 });
 
+elNameInput.addEventListener('keyup', () => {
+    elNameInput.value = elNameInput.value.replace(/[^a-zA-Zа-яА-ЯёЁ ]/g, '');
+})
+
 elSelectSex.addEventListener('change', (ev) => {
     let sex = ev.target.value;
     elAnswer.innerHTML = '';
