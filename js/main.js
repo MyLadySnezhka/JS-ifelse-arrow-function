@@ -22,6 +22,7 @@ elNameDiv.classList.add('show');
 
 elBtnOk.addEventListener('click', () => {
     let nameUs = elNameInput.value;
+    nameUs = nameUs.toLowerCase();
     elName.innerHTML = `Вітаю, ${nameUs}!`; 
     elNameDiv.classList.remove('show');
     elSexDiv.classList.add('show');
